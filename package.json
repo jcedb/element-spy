@@ -1,5 +1,5 @@
 {
-  "name": "element-spy",
+  "name": "js-element-spy",
   "version": "1.0.0",
   "description": "Detects your element in viewport and allows you to add a callback function.",
   "main": "lib/index.js",
