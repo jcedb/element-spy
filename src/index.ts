@@ -40,10 +40,14 @@ export const elementSpy = (
     const rect = el.getBoundingClientRect();
 
     if (typeof listener === 'string') {
-      addEventListener(listener, () => isInViewport(rect, callback), false);
+      window.addEventListener(
+        listener,
+        () => isInViewport(rect, callback),
+        false
+      );
     } else if (Array.isArray(listener)) {
       for (let i = 0; i < listener.length; i++) {
-        addEventListener(
+        window.addEventListener(
           listener[i],
           () => isInViewport(rect, callback),
           false
