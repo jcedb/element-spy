@@ -10,12 +10,6 @@ const getElement = (target: TTarget) => {
 const isInViewport = (rect: DOMRect, callback: () => void) => {
   let { top, left, width, height } = rect;
 
-  // while (el.offsetParent) {
-  //   el = el.offsetParent as HTMLElement;
-  //   top += el.offsetTop;
-  //   left += el.offsetLeft;
-  // }
-
   if (
     top >= window.pageYOffset &&
     left >= window.pageXOffset &&
