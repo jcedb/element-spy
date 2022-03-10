@@ -1,5 +1,4 @@
 *.log
 .DS_Store
-/.github
 node_modules
 dist
