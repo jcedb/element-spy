@@ -10,6 +10,12 @@ const getElement = (target: TTarget) => {
 const isInViewport = (rect: DOMRect, callback: () => void) => {
   let { top, left, width, height } = rect;
 
+  // while (el.offsetParent) {
+  //   el = el.offsetParent as HTMLElement;
+  //   top += el.offsetTop;
+  //   left += el.offsetLeft;
+  // }
+
   if (
     top >= window.pageYOffset &&
     left >= window.pageXOffset &&
@@ -34,10 +40,14 @@ export const elementSpy = (
     const rect = el.getBoundingClientRect();
 
     if (typeof listener === 'string') {
-      addEventListener(listener, () => isInViewport(rect, callback), false);
+      window.addEventListener(
+        listener,
+        () => isInViewport(rect, callback),
+        false
+      );
     } else if (Array.isArray(listener)) {
       for (let i = 0; i < listener.length; i++) {
-        addEventListener(
+        window.addEventListener(
           listener[i],
           () => isInViewport(rect, callback),
           false
