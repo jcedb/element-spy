@@ -31,7 +31,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@jcedb/js-element-spy",
+  "name": "js-element-spy",
   "author": "John Cedrick Bermejo",
   "module": "dist/js-element-spy.esm.js",
   "size-limit": [
